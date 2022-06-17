@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="10.1">
+<file name="/home/nguyenlt/a_2022/JavaExerciseTwo/Exercise3/src/main/java/todo/package-info.java">
+</file>
+<file name="/home/nguyenlt/a_2022/JavaExerciseTwo/Exercise3/src/main/java/todo/Main.java">
+</file>
+<file name="/home/nguyenlt/a_2022/JavaExerciseTwo/Exercise3/src/main/java/todo/MyThread.java">
+</file>
+<file name="/home/nguyenlt/a_2022/JavaExerciseTwo/Exercise3/src/main/java/io/ReadFile.java">
+</file>
+<file name="/home/nguyenlt/a_2022/JavaExerciseTwo/Exercise3/src/main/java/io/package-info.java">
+</file>
+<file name="/home/nguyenlt/a_2022/JavaExerciseTwo/Exercise3/src/main/java/io/WriteFile.java">
+</file>
+</checkstyle>

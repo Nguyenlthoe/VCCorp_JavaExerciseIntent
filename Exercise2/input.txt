@@ -1,0 +1,179 @@
+Lớp StringBuffer trong java
+Trong java, lớp StringBuffer được sử dụng để tạo chuỗi có thể thay đổi (mutable). Lớp StringBuffer trong java tương tự như lớp String ngoại trừ nó có thể thay đổi.
+
+Chú ý: Lớp StringBuffer là thread-safe (luồng an toàn) nghĩa là nhiều luồng (thread) không thể truy cập nó trong cùng một thời điểm.
+Các Constructor quan trọng của lớp StringBuffer trong java
+StringBuffer(): Tạo ra một bộ đệm chuỗi với dung lượng ban đầu là 16.
+StringBuffer(String str): Tạo ra một bộ đệm chuỗi với chuỗi cụ thể.
+StringBuffer(int capacity): Tạo ra một bộ đệm chuỗi với dung lượng được chỉ định như độ dài chuỗi.
+Các phương thức của lớp StringBuffer trong java
+public synchronized StringBuffer append(String s): được sử dụng để nối thêm các chuỗi được chỉ định với chuỗi này. Các phương thức append() được nạp chồng như append(char), append(boolean), append(int), append(float), append(double), ...
+public synchronized StringBuffer insert(int offset, String s): được sử dụng để chèn chuỗi chỉ định với chuỗi này tại vị trí quy định. Các phương thức insert() được nạp chồng như insert(int, char), insert(int, boolean), insert(int, int), insert(int, float), insert(int, double), ...
+public synchronized StringBuffer replace(int startIndex, int endIndex, String str): được sử dụng để thay thế chuỗi từ vị trị startIndex đến endIndex bằng chuỗi str.
+public synchronized StringBuffer delete(int startIndex, int endIndex): được sử dụng để xóa chuỗi từ vị trí startIndex đến endIndex.
+public synchronized StringBuffer reverse(): được sử dụng để đảo ngược chuỗi.
+public int capacity(): được sử dụng để trả về dung lượng hiện tại.
+public void ensureCapacity(int minimumCapacity): được sử dụng để đảm bảo dung lượng ít nhất bằng mức tối thiểu nhất định.
+public char charAt(int index): được sử dụng trả về ký tự tại vị trí quy định.
+public int length(): được sử dụng trả về chiều dài của chuỗi nghĩa là tổng số ký tự.
+public String substring(int beginIndex): được sử dụng trả về chuỗi con bắt đầu từ vị trí được chỉ định.
+public String substring(int beginIndex, int endIndex): được sử dụng trả về chuỗi con với vị trí bắt đầu và vị trí kết thúc được chỉ định.
+Chuỗi có thể sửa đổi là gì?
+Một chuỗi có thể chỉnh sửa hoặc thay đổi được gọi là chuỗi có thể sửa đổi. Các lớp StringBuffer và StringBuilder được sử dụng để tạo ra chuỗi có thể sửa đổi(mutable).
+1) Phương thức append() của lớp StringBuffer trong java
+Phương thức append() của lớp StringBuffer nối thêm tham số vào cuối chuỗi.
+
+?
+1
+2
+3
+4
+5
+6
+7
+public class StringBufferExam1 {
+ public static void main(String args[]) {
+  StringBuffer sb = new StringBuffer("Hello ");
+  sb.append("Java");//đến đây chuỗi ban đầu đã bị thay đổi
+  System.out.println(sb);//in Hello Java  
+ }
+}
+2) Phương thức insert() của lớp StringBuffer trong java
+Phương thức insert() của lớp StringBuffer chèn chuỗi vào chuỗi này từ vị trí quy định.
+
+?
+1
+2
+3
+4
+5
+6
+7
+public class StringBufferExam2 {
+ public static void main(String args[]) {
+  StringBuffer sb = new StringBuffer("Hello ");
+  sb.insert(1, "Java");//đến đây chuỗi ban đầu đã bị thay đổi
+  System.out.println(sb);//in -> HJavaello  
+ }
+}
+3) Phương thức replace() của lớp StringBuffer trong java
+Phương thức replace() của lớp StringBuffer thay thế chuỗi bằng chuỗi khác từ vị trị bắt đầu và kết thúc được quy định.
+
+?
+1
+2
+3
+4
+5
+6
+7
+public class StringBufferExam3 {
+ public static void main(String args[]) {
+  StringBuffer sb = new StringBuffer("Hello");
+  sb.replace(1, 3, "Java");
+  System.out.println(sb);//in -> HJavalo  
+ }
+}
+4) Phương thức delete() của lớp StringBuffer trong java
+Phương thức replace() của lớp StringBuffer xóa chuỗi từ vị trị bắt đầu và kết thúc được quy định.
+
+?
+1
+2
+3
+4
+5
+6
+7
+public class StringBufferExam4 {
+ public static void main(String args[]) {
+  StringBuffer sb = new StringBuffer("Hello");
+  sb.delete(1, 3);
+  System.out.println(sb);//in ->           Hlo  
+ }
+}
+5) Phương thức reverse() của lớp StringBuffer trong java
+Phương thức reverse()     của lớp StringBuffer đảo ngược chuỗi hiện tại.
+?
+1
+2
+3
+4
+5    
+6
+7
+public class StringBufferExam5 {
+ public static void main(String args[]) {
+  StringBuffer sb = new StringBuffer("Hello");
+  sb.reverse();
+  System.out.println(sb);//in -> olleH  
+ }
+}
+6) Phương thức capacity() của lớp StringBuffer trong java
+Phương thức capacity() của lớp StringBuffer trả về dung lượng của bộ nhớ đệm. Dung lượng mặc định của bộ nhớ đệm là 16. Nếu số lượng ký tự của chuỗi tăng lên thì dung lượng được tính theo công thức (dung lượng cũ*2)+2. Ví dụ: Nếu dung lượng hiện tại là 16, nó sẽ tăng lên (16*2)+2=34.
+?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+public class StringBufferExam6 {
+ public static void main(String args[]) {
+  StringBuffer sb = new StringBuffer();
+  System.out.println(sb.capacity());//mặc định là 16  
+  sb.append("Hello");
+  System.out.println(sb.capacity());//đến đây vẫn là 16  
+  sb.append("java is my favourite language");
+  System.out.println(sb.capacity());//đến đây là (16*2)+2=34 i.e (dung lượng cũ*2)+2  
+ }
+}
+7) Phương thức ensureCapacity() của lớp StringBuffer trong java
+Phương thức ensureCapacity() của lớp StringBuffer đảm bảo rằng dung lượng đã cho là tối thiểu với dung lượng hiện tại. Nếu nó lớn hơn dung lượng hiện tại, dung lượng hiện tại được tăng theo công thức (dung lượng cũ*2)+2. Ví dụ, dung lượng hiện tại là 16, nó sẽ tăng lên là (16*2)+2=34.
+?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+public class StringBufferExam7 {
+ public static void main(String args[]) {
+  StringBuffer sb = new StringBuffer();
+  System.out.println(sb.capacity());//mặc định là 16  
+  sb.append("Hello");
+  System.out.println(sb.capacity());//đến đây là 16  
+  sb.append("java is my favourite language");
+  System.out.println(sb.capacity());//đến đây là (16*2)+2=34 i.e (dung lượng cũ*2)+2  
+  sb.ensureCapacity(10);//đến đây không có sự thay đổi
+  System.out.println(sb.capacity());//đến đây là 34  
+  sb.ensureCapacity(50);//đến đây là (34*2)+2  
+  System.out.println(sb.capacity());//đến đây là 70  
+ }
+}
+Tìm hiểu về xử lý chuỗi trong java
+String là gì
+Immutable String
+So sánh String
+Nối String
+Sub-String
+Phương thức của lớp String
+Lớp StringBuffer
+Lớp StringBuilder
+String vs StringBuffer
+StringBuffer vs Builder
+Tạo lớp Immutable
+Phương thức toString
+Lớp StringTokenizer
