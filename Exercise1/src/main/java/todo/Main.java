@@ -1,6 +1,5 @@
 package todo;
 
-import java.util.Scanner;
 import java.util.Set;
 
 import myset.MySet;
@@ -11,13 +10,8 @@ public final class Main {
      * @param args
      */
     public static void main(final String[] args) {
-        Scanner sc = new Scanner(System.in);
-        // NHập kích thước và khoảng giá trị của tập hợp
-        System.out.println("Nhập kích thước tập hợp và khoảng "
-                + "giá trị của các phần từ: \n");
-        int size = sc.nextInt();
-        int range = sc.nextInt();
-        sc.close();
+        final int size = 200000;
+        final int range = 300000;
         // khởi tạo tập hợp A
         Set<Integer> setA = MySet.generateSet(size, range);
         System.out.println("Tập hợp A là: \n");

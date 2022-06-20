@@ -21,8 +21,8 @@ public final class Main {
      * @param args
      */
     public static void main(final String[] args) {
-        // TODO Auto-generated method stub
         solution2();
+//        System.exit(1);
     }
     /**
      * giải pháp 2 sử dụng future và callable interface.
@@ -73,7 +73,7 @@ public final class Main {
             System.out.println(sortList.get(i).getKey()
                     + ": " + sortList.get(i).getValue());
         }
-        return;
+        executor.shutdown();
     }
     /**
      * giải pháp 1 của bài toán sử dụng concurrentHashMap.
@@ -115,6 +115,7 @@ public final class Main {
             System.out.println(sortList.get(i).getKey()
                     + ": " + sortList.get(i).getValue());
         }
+        executor.shutdown();
     }
     /**
      * contructor main, not use.
