@@ -5,5 +5,5 @@ Các file text được đặt trong folder <b>input</b>, sửa đổi các file
 Chương trình sử dụng hai phương pháp để đồng bộ hóa các luồng: <br>
 + sử dụng CocurrentHashMap để số lượng các từ
 + sử dụng Future, Callable, ExecutorCompletionService để xử lý mỗi khi một file được đọc xong
-Để xem sự khác nhau giữa các phương pháp, sửa đổi hàm main trong file src/main/java/todo/Main.java với solution1: sử dụng ConcurrentHashMap và solution 2 sử dụng ExecutorCompletionService  
+<hr>Để xem sự khác nhau giữa các phương pháp, sửa đổi hàm main trong file src/main/java/todo/Main.java với solution1: sử dụng ConcurrentHashMap và solution 2 sử dụng ExecutorCompletionService  
 ### nhận xét: cách sử dụng ExecutorCompletionService cho kết quả nhanh hơn
